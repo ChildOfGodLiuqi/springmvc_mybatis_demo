@@ -21,6 +21,7 @@ public class Test {
 	public User test() {
 		User user=new User();
 		user.setName("zxl");
+		user.setAge(22);
 		return user;
 	}
 }
