@@ -23,4 +23,9 @@ public class UserController {
 		response.setUserList(userService.getAllUser());
 		return response;
 	}
+	
+	@RequestMapping("index")
+	public String index(){
+		return "index";
+	}
 }
