@@ -35,7 +35,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath:conf/core/springmvc-servlet.xml,
-						 classpath:conf/core/springmvc-mybatis.xml
+						 classpath:conf/core/springmvc-mybatis.xml,
+						 classpath:conf/core/springmvc-job.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
