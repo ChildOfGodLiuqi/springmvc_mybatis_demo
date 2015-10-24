@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+
+	<bean id="parentdataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}" />
+		<property name="idleMaxAge" value="${jdbc.idleMaxAge}" />
+		<property name="maxConnectionsPerPartition" value="${jdbc.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${jdbc.minConnectionsPerPartition}" />
+		<property name="partitionCount" value="${jdbc.partitionCount}" />
+		<property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
+		<property name="statementsCacheSize" value="${jdbc.statementsCacheSize}" />
+		<property name="releaseHelperThreads" value="${jdbc.releaseHelperThreads}" />
+	</bean>
+
+
+	<bean id="master" class="com.jolbox.bonecp.BoneCPDataSource"
+		parent="parentdataSource">
+		<property name="jdbcUrl" value="${jdbc.write.jdbcUrl}" />
+		<property name="username" value="${jdbc.write.username}" />
+		<property name="password" value="${jdbc.write.password}" />
+	</bean>
+
+
+	<!-- <bean id="slave_1" class="com.jolbox.bonecp.BoneCPDataSource"
+		parent="parentdataSource">
+		<property name="jdbcUrl" value="${jdbc.read1.jdbcUrl}" />
+		<property name="username" value="${jdbc.read1.username}" />
+		<property name="password" value="${jdbc.read1.password}" />
+	</bean>
+
+	<bean id="slave_2" class="com.jolbox.bonecp.BoneCPDataSource"
+		parent="parentdataSource">
+		<property name="jdbcUrl" value="${jdbc.read2.jdbcUrl}" />
+		<property name="username" value="${jdbc.read2.username}" />
+		<property name="password" value="${jdbc.read2.password}" />
+	</bean> -->
+
+<!-- 	<bean id="dataSource" class="com.beilou.database.rwsp.MulRoutingDataSource">
+		<property name="targetDataSources">
+			<map key-type="java.lang.String">
+				<entry key="master" value-ref="master" />
+				<entry key="master2" value-ref="slave_1" />
+				<entry key="slave">
+					<bean class="com.beilou.database.rwsp.GroupKey">
+						<property name="dataSources">
+							<array>
+								<ref bean="slave_1" />
+								<ref bean="slave_2" />
+							</array>
+						</property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="master" />
+	</bean> -->
+
+</beans>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop
+	      http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd 
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean name="sqlSessionFactory" id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="master" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:mappers/*.xml" />
+		<!-- 自动扫描该包下使用@Alias注解的实体类并进行别名设置-->
+		<property name="typeAliasesPackage" value="com.zxl.sp.model" />
+	</bean>
+
+	<bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.zxl.web.dao.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<bean id="dataSourceAdvice" class="com.beilou.database.rwsp.DataSourceAdvice" />
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="master" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- <aop:config> -->
+	<!-- <aop:aspect ref="dataSourceAdvice"> -->
+	<!-- <aop:pointcut id="db" -->
+	<!-- expression="execution(* com.beilou.product.dao.impl..*.*(..))" /> -->
+	<!-- <aop:before pointcut-ref="db" method="before" /> -->
+	<!-- </aop:aspect> -->
+	<!-- </aop:config> -->
+
+</beans>

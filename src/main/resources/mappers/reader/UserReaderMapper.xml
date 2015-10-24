@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxl.sp.dao.reader.UserReaderMapper">
+	<sql id="table_name">user</sql>
+	<sql id="id_column">id</sql>
+	<sql id="base_columns">username,password,gender,name,age,address</sql>
+	<sql id="all_columns">
+		<include refid="id_column" />
+		,
+		<include refid="base_columns" />
+	</sql>
+
+	<select id="getAllUser" resultType="com.zxl.sp.entity.User">
+		select 
+		<include refid="all_columns"></include>
+		from 
+		<include refid="table_name"></include>
+	</select>
+
+</mapper>
+
+
+
