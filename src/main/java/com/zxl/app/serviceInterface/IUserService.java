@@ -1,8 +1,8 @@
-package com.zxl.web.serviceInterface;
+package com.zxl.app.serviceInterface;
 
 import java.util.List;
 
-import com.zxl.web.model.User;
+import com.zxl.app.model.User;
 
 
 public interface IUserService {

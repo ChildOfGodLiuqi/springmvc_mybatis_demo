@@ -1,4 +1,4 @@
-package com.zxl.web.task;
+package com.zxl.app.task;
 
 public class TestJob {
 	public void execute(){

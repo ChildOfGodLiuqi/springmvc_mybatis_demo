@@ -1,4 +1,4 @@
-package com.zxl.web.common;
+package com.zxl.app.common;
 
 import java.io.IOException;
 import java.io.PrintWriter;

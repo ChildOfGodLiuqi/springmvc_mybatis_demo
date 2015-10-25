@@ -1,10 +1,10 @@
-package com.zxl.web.dao.mapper;
+package com.zxl.app.dao.mapper;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.zxl.web.model.User;
+import com.zxl.app.model.User;
 
 @Repository
 public interface UserReaderMapper {

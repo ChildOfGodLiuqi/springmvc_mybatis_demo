@@ -1,10 +1,10 @@
-package com.zxl.web.model.response;
+package com.zxl.app.model.response;
 
 import java.io.Serializable;
 import java.util.List;
 
-import com.zxl.web.common.ServiceResponseBase;
-import com.zxl.web.model.User;
+import com.zxl.app.common.ServiceResponseBase;
+import com.zxl.app.model.User;
 
 public class GetAllUserResponse extends ServiceResponseBase implements
 		Serializable {

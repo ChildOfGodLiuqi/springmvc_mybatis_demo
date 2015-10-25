@@ -1,4 +1,4 @@
-package com.zxl.web.model;
+package com.zxl.app.model;
 
 import org.apache.ibatis.type.Alias;
 

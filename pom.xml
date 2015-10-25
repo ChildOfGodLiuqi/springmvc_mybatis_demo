@@ -204,6 +204,7 @@
 			<version>${jackson.version}</version>
 		</dependency>
 		<!-- jackson配置结束 -->
+		
 		<!-- mybatis框架 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -224,17 +225,10 @@
 		</dependency>
 		<!-- 数据库连接池 -->
 		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
-		</dependency>
-
-		<!-- 数据库连接池 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>1.0.14</version>
-		</dependency>
+				<groupId>com.jolbox</groupId>
+				<artifactId>bonecp</artifactId>
+				<version>0.8.0.RELEASE</version>
+			</dependency>
 
 		<!-- redis客户端 -->
 		<dependency>

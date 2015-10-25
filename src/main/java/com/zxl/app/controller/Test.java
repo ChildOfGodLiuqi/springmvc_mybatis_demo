@@ -1,4 +1,4 @@
-package com.zxl.web.controller;
+package com.zxl.app.controller;
 
 import javax.annotation.Resource;
 
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zxl.web.model.User;
-import com.zxl.web.serviceInterface.IUserService;
+import com.zxl.app.model.User;
+import com.zxl.app.serviceInterface.IUserService;
 
 @Controller
 @RequestMapping("/test")

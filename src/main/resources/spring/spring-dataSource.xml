@@ -18,7 +18,7 @@
 		<property name="releaseHelperThreads" value="${jdbc.releaseHelperThreads}" />
 	</bean>
 
-
+	<!-- 主节点 -->
 	<bean id="master" class="com.jolbox.bonecp.BoneCPDataSource"
 		parent="parentdataSource">
 		<property name="jdbcUrl" value="${jdbc.write.jdbcUrl}" />
