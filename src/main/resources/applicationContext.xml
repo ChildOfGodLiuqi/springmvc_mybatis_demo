@@ -34,7 +34,8 @@
 	</bean>
 
 	<import resource="spring/spring-mvc.xml" />
-	<import resource="spring/springm-mybatis.xml" />
-	<import resource="spring/spring-job.xml" />
+	<import resource="spring/spring-mybatis.xml" />
+	<import resource="spring/spring-dataSource.xml" />
+	<import resource="spring/spring-task.xml" />
 
 </beans>

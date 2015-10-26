@@ -15,15 +15,16 @@
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<property name="mapperLocations" value="classpath:mappers/*.xml" />
 		<!-- 自动扫描该包下使用@Alias注解的实体类并进行别名设置-->
-		<property name="typeAliasesPackage" value="com.zxl.sp.model" />
+		<property name="typeAliasesPackage" value="com.zxl.app.model" />
 	</bean>
 
 	<bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.zxl.web.dao.mapper" />
+		<property name="basePackage" value="com.zxl.app.dao.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
-	<bean id="dataSourceAdvice" class="com.beilou.database.rwsp.DataSourceAdvice" />
+	<!-- 数据源选择切面 -->
+	<!-- <bean id="dataSourceAdvice" class="com.beilou.database.rwsp.DataSourceAdvice" /> -->
 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

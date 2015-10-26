@@ -63,7 +63,7 @@
 	<!-- transaction support -->
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="readDataSource" />
+		<property name="dataSource" ref="master" />
 	</bean>
 	<bean id="txDefinition"
 		class="org.springframework.transaction.support.DefaultTransactionDefinition">
